@@ -1,0 +1,49 @@
+:root{
+    --BackgroundColor: #101010;
+    --TextColor: white;
+}
+::-webkit-scrollbar
+{
+    width: 0px;
+    height: 0px;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    scroll-behavior: smooth;
+    font-family: monospace;
+}
+html{
+    scroll-snap-type: y mandatory;
+}
+body{
+    background-color: var(--BackgroundColor);
+}
+.Home,.About,.Projects,.Contact{
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+.Header
+{
+    position: fixed;
+    display: grid;
+    grid-auto-flow: column;
+    width: 100vw;
+    font-size: 200%;
+    background-color: var(--BackgroundColor);
+    padding: 10px 0px;
+}
+.Header >a{
+    display: flex;
+    justify-content: center;
+    color: var(--TextColor);
+}
+.Home
+{
+    background-color: red;
+}
+.Name{
+    font-size: 200%;
+    color: var(--TextColor);
+}
