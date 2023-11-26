@@ -52,9 +52,6 @@ body{
 .Header >a:hover{
     color: var(--TextColorHover);
 }
-.HeaderActive > a{
-    color: var(--TextColorHover);
-}
 .Home
 {
     display: flex;
