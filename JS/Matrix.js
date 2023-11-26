@@ -42,17 +42,21 @@ var Drawing = setInterval(draw, 30);
 
 window.addEventListener('resize', ()=>
 {
-	clearInterval(Drawing);
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
-	
-	fontSize = 16;
-	columns = canvas.width/fontSize;
-	
-	rainDrops = [];
-	
-	for( let x = 0; x < columns; x++ ) {
-		rainDrops[x] = 1;
+	console.log(window.innerWidth)
+	if(window.innerWidth>=400)
+	{
+		clearInterval(Drawing);
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		
+		fontSize = 16;
+		columns = canvas.width/fontSize;
+		
+		rainDrops = [];
+		
+		for( let x = 0; x < columns; x++ ) {
+			rainDrops[x] = 1;
+		}
+		Drawing = setInterval(draw,30)
 	}
-	Drawing = setInterval(draw,30)
 });

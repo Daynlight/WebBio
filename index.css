@@ -5,6 +5,7 @@
     --TextColor: white;
     --TextColorHover: rgb(85, 85, 85);
     --TransitionTime: 1s;
+    --ShadowColor: white;
 }
 ::-webkit-scrollbar
 {
@@ -18,6 +19,10 @@
     font-family: monospace;
     color: var(--TextColor);
 }
+html,body,head{
+    width: 100%;
+    height: 100%;
+}
 html{
     scroll-snap-type: y mandatory;
 }
@@ -30,8 +35,8 @@ body{
     transition: var(--TransitionTime);
 }
 .Home,.About,.Projects,.Contact{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     scroll-snap-align: start;
 }
 .Header
@@ -58,40 +63,35 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 200%;
-}
-.HomeContent{
     text-align: center;
+    text-shadow: var(--ShadowColor) 1px 1px 10px;
 }
-.HomeContent >div{
-    text-shadow: white 1px 1px 10px;
+.Matrix{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
 }
 .About{
     display: grid;
     grid-template-columns: 60% 40%;
-    height: 100vh;
+    height: 100%;
     align-items: center;
-}
-.AboutContent{
     text-align: center;
     font-size: 200%;
-    padding: 60px;
-}
-.AboutContent > img{
-    width: 100%;
-}
-.Desc{
-    display: inline;
 }
 .Name{
     font-size: 200%;
+}
+.Desc{
+    display: inline;
 }
 .LinksTitle{
     padding-top: 50px;
 }
 .AboutImg{
-    text-align: center;
-    font-size: 200%;
-    padding: 60px;
     position: relative;
 }
 .ImgPFP,.ImgBorder{
@@ -104,36 +104,23 @@ body{
 .ImgPFP{
     z-index: -1;
 }
-.Matrix{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-}
-.AboutContentHide{
-    transform: translateX(-100vw);
-}
-
 @media only screen and (max-width: 768px) {
+    *{
+        font-size: 90%;
+    }
+    html{
+        scroll-snap-type: none;
+    }
     .Header{
         display: none;
     }
     .AboutContent{
-        display: block;
-        width: calc(100vw - 60px);
-        padding: 30px;
+        width: calc(100% - 60px);
+        padding: 0px 30px;
         order: 2;
     }
     .About{
         grid-template-columns: 100%;
         grid-template-rows: 50% 50%;
-    }
-    .LinksTitle{
-        padding-top: 0px;
-    }
-    *{
-        font-size: 80%;
     }
 }
