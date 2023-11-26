@@ -66,6 +66,10 @@ body{
     text-align: center;
     text-shadow: var(--ShadowColor) 1px 1px 10px;
 }
+.HomeContent{
+    text-align: center;
+    text-shadow: var(--ShadowColor) 1px 1px 10px;
+}
 .Matrix{
     width: 100%;
     height: 100%;
