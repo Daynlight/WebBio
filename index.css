@@ -127,8 +127,18 @@ body{
         display: block;
         width: calc(100vw - 60px);
         padding: 30px;
+        order: 2;
     }
-    .AboutImg{
-       display: none;
+    .About{
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+    }
+    .LinksTitle{
+        padding-top: 0px;
+    }
+}
+@media only screen and (max-width: 768px){
+    .About{
+        font-size: 60%;
     }
 }
