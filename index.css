@@ -133,9 +133,7 @@ body{
     .LinksTitle{
         padding-top: 0px;
     }
-}
-@media only screen and (max-width: 768px){
-    .About{
-        font-size: 60%;
+    *{
+        font-size: 80%;
     }
 }
