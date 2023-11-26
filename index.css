@@ -1,6 +1,10 @@
 :root{
-    --BackgroundColor: #101010;
+    --BackgroundColor: #110828;
+    --HeaderBackgroundColor: #1E102A;
+    --HeaderProjectsColor: #D84974;
     --TextColor: white;
+    --TextColorHover: rgb(85, 85, 85);
+    --TransitionTime: 1s;
 }
 ::-webkit-scrollbar
 {
@@ -12,12 +16,18 @@
     padding: 0px;
     scroll-behavior: smooth;
     font-family: monospace;
+    color: var(--TextColor);
 }
 html{
     scroll-snap-type: y mandatory;
 }
 body{
     background-color: var(--BackgroundColor);
+    display: flex;
+    justify-content: center;
+}
+.Home,.About,.Projects,.Contact,.Header >a,.Header,.AboutContent,.AboutImg{
+    transition: var(--TransitionTime);
 }
 .Home,.About,.Projects,.Contact{
     width: 100vw;
@@ -26,24 +36,99 @@ body{
 }
 .Header
 {
-    position: fixed;
     display: grid;
     grid-auto-flow: column;
     width: 100vw;
     font-size: 200%;
-    background-color: var(--BackgroundColor);
+    background-color: var(--HeaderBackgroundColor);
     padding: 10px 0px;
+    position: fixed;
 }
 .Header >a{
     display: flex;
     justify-content: center;
-    color: var(--TextColor);
+    cursor: pointer;
+}
+.Header >a:hover{
+    color: var(--TextColorHover);
+}
+.HeaderActive > a{
+    color: var(--TextColorHover);
 }
 .Home
 {
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200%;
+}
+.HomeContent{
+    text-align: center;
+}
+.HomeContent >div{
+    text-shadow: white 1px 1px 10px;
+}
+.About{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 100vh;
+    align-items: center;
+}
+.AboutContent{
+    text-align: center;
+    font-size: 200%;
+    padding: 60px;
+}
+.AboutContent > img{
+    width: 100%;
+}
+.Desc{
+    display: inline;
 }
 .Name{
     font-size: 200%;
-    color: var(--TextColor);
+}
+.LinksTitle{
+    padding-top: 50px;
+}
+.AboutImg{
+    text-align: center;
+    font-size: 200%;
+    padding: 60px;
+    position: relative;
+}
+.ImgPFP,.ImgBorder{
+    position: absolute;
+    left: calc(50% - (300px) / 2);
+    top: calc(50% - (300px) / 2);
+    width: 300px;
+    aspect-ratio: 1;
+}
+.ImgPFP{
+    z-index: -1;
+}
+.Matrix{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+.AboutContentHide{
+    transform: translateX(-100vw);
+}
+
+@media only screen and (max-width: 768px) {
+    .Header{
+        display: none;
+    }
+    .AboutContent{
+        display: block;
+        width: calc(100vw - 60px);
+        padding: 30px;
+    }
+    .AboutImg{
+       display: none;
+    }
 }
