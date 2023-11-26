@@ -63,7 +63,7 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 200%;
-    text-align: center;
+    text-align:center;
     text-shadow: var(--ShadowColor) 1px 1px 10px;
 }
 .Matrix{
