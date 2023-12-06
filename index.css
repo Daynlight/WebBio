@@ -2,6 +2,7 @@
     --BackgroundColor: #110828;
     --HeaderBackgroundColor: #1E102A;
     --HeaderProjectsColor: #D84974;
+    --HeaderHeight: 30px;
     --TextColor: white;
     --TextColorHover: rgb(85, 85, 85);
     --TransitionTime: 1s;
@@ -31,7 +32,7 @@ body{
     display: flex;
     justify-content: center;
 }
-.Home,.About,.Projects,.Contact,.Header >a,.Header,.AboutContent,.AboutImg{
+.Home,.About,.Projects,.Contact,.Header >a,.Header,.AboutContent,.AboutImg,.ProjectElemenet >a,.ContactLink >a{
     transition: var(--TransitionTime);
 }
 .Home,.About,.Projects,.Contact{
@@ -48,6 +49,7 @@ body{
     background-color: var(--HeaderBackgroundColor);
     padding: 10px 0px;
     position: fixed;
+    height: var(--HeaderHeight);
 }
 .Header >a{
     display: flex;
@@ -84,6 +86,9 @@ body{
     text-align: center;
     font-size: 200%;
 }
+.AboutContent{
+    padding: 5px;
+}
 .Name{
     font-size: 200%;
 }
@@ -106,6 +111,63 @@ body{
 .ImgPFP{
     z-index: -1;
 }
+.Projects{
+    display: grid;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    min-height: 100%;
+    height: fit-content;
+    grid-template-columns: repeat(4, 1fr);
+}
+.ProjectElemenet{
+    height: fit-content;
+    width: 200px;
+    text-align: center;
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px white;
+}
+.ProjectElemenet >a:hover{
+    color: gray;
+}
+.ProjectElemenet > img{
+    width: 100%;
+}
+.ProjectElemenet > a{
+    font-size: 300%;
+}
+.Contact{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 300%;
+    text-align: center;
+}
+.ContactLink >a:hover{
+    color: gray;
+}
+@media only screen and (min-width: 300px){
+    .Projects{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .ProjectElemenet{
+        width: 90%;
+    }
+}
+@media only screen and (min-width: 500px){
+    .Projects{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (min-width: 900px){
+    .Projects{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 @media only screen and (max-width: 768px) {
     *{
         font-size: 90%;
