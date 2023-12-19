@@ -25,7 +25,7 @@ html,body,head{
     height: 100%;
 }
 html{
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
 }
 body{
     background-color: var(--BackgroundColor);
@@ -35,10 +35,14 @@ body{
 .Home,.About,.Projects,.Contact,.Header >a,.Header,.AboutContent,.AboutImg,.ProjectElemenet >a,.ContactLink >a{
     transition: var(--TransitionTime);
 }
-.Home,.About,.Projects,.Contact{
+.Home,.About,.Contact{
     width: 100%;
     height: 100%;
     scroll-snap-align: start;
+}
+#Projects{
+    scroll-snap-align: start;
+    margin-bottom: var(--HeaderHeight);
 }
 .Header
 {
@@ -111,32 +115,15 @@ body{
 .ImgPFP{
     z-index: -1;
 }
-.Projects{
-    display: grid;
-    width: 100%;
-    align-items: center;
-    justify-items: center;
-    min-height: 100%;
-    height: fit-content;
-    grid-template-columns: repeat(4, 1fr);
-}
 .ProjectElemenet{
-    height: fit-content;
-    width: 200px;
+    border: 4px solid white;
     text-align: center;
-    border: 4px solid rgb(255, 255, 255);
-    border-radius: 10px;
-    box-shadow: 5px 5px 30px white;
+    font-size: 600%;
+    width: calc(100% - 8px);
+    height: 100px;
+    margin-top: 200px;
 }
-.ProjectElemenet >a:hover{
-    color: gray;
-}
-.ProjectElemenet > img{
-    width: 100%;
-}
-.ProjectElemenet > a{
-    font-size: 300%;
-}
+
 .Contact{
     width: 100%;
     height: 100%;
@@ -148,24 +135,6 @@ body{
 }
 .ContactLink >a:hover{
     color: gray;
-}
-@media only screen and (min-width: 300px){
-    .Projects{
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .ProjectElemenet{
-        width: 90%;
-    }
-}
-@media only screen and (min-width: 500px){
-    .Projects{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media only screen and (min-width: 900px){
-    .Projects{
-        grid-template-columns: repeat(4, 1fr);
-    }
 }
 
 @media only screen and (max-width: 768px) {

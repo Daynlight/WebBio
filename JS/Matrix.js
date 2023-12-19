@@ -42,7 +42,6 @@ var Drawing = setInterval(draw, 30);
 
 window.addEventListener('resize', ()=>
 {
-	console.log(window.innerWidth)
 	if(window.innerWidth>=400)
 	{
 		clearInterval(Drawing);
