@@ -102,6 +102,9 @@ body{
 .LinksTitle{
     padding-top: 50px;
 }
+.Links >div:hover{
+    color: gray;
+}
 .AboutImg{
     position: relative;
 }
