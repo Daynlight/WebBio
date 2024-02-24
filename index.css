@@ -102,7 +102,7 @@ body{
 .LinksTitle{
     padding-top: 50px;
 }
-.Links >div:hover{
+.Links >a:hover{
     color: gray;
 }
 .AboutImg{
