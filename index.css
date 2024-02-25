@@ -8,17 +8,29 @@
     --TransitionTime: 1s;
     --ShadowColor: white;
 }
-::-webkit-scrollbar
-{
-    width: 0px;
-    height: 0px;
-}
 *{
+    rgb(219, 58, 91)
     margin: 0px;
     padding: 0px;
     scroll-behavior: smooth;
     font-family: monospace;
     color: var(--TextColor);
+}
+::-webkit-scrollbar
+{
+    width: 0px;
+    height: 0px;
+}
+
+div::-webkit-scrollbar
+{
+    width: 20px;
+    height: 20px;
+    background-color: #201b1c;
+}
+div::-webkit-scrollbar-thumb
+{
+    background-color: #d6284b;
 }
 html,body,head{
     width: 100%;
@@ -54,6 +66,9 @@ body{
     padding: 10px 0px;
     position: fixed;
     height: var(--HeaderHeight);
+    z-index: 2;
+    left: 0;
+    top: 0;
 }
 .Header >a{
     display: flex;
@@ -115,15 +130,36 @@ body{
 .ImgPFP{
     z-index: -1;
 }
+.Projects{
+    height: calc(100vh - 30px);
+    width: 100vw;
+    display: flex;
+    overflow-x: scroll;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
 .ProjectElemenet{
     border: 4px solid white;
+    border-radius: 10px;
     text-align: center;
-    font-size: 600%;
-    width: calc(100% - 8px);
-    height: 100px;
-    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 400%;
+    aspect-ratio: 1/2;
+    height: 70%;
+    cursor: pointer;
+    filter: brightness(0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: var(--TransitionTime);
 }
-
+.ProjectElemenet:hover{
+    filter: brightness(1);
+    transition: var(--TransitionTime);
+}
 .Contact{
     width: 100%;
     height: 100%;
